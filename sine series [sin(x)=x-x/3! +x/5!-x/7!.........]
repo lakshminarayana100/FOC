@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <math.h>
+
+double calculateSin(double x) {
+    double result = 0;
+    double term = x;
+    int sign = -1;
+    int i, n = 1;
+    
+    for (i = 1; i <= 10; i++) {  // You can change the number of terms (10 in this case)
+        result += term;
+        sign *= -1;
+        n += 2;
+        term = (pow(x, n) / tgamma(n + 1)) * sign;
+    }
+    
+    return result;
+}
+
+int main() {
+    double angle, radians, sinValue;
+
+    printf("Enter the angle in degrees: ");
+    scanf("%lf", &angle);
+
+    radians = angle * (M_PI / 180.0);  // Convert angle to radians
+    sinValue = calculateSin(radians);
+
+    printf("sin(%.2lf) = %.4lf\n", angle, sinValue);
+
+    return 0;
+}
