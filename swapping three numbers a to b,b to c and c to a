@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+    int a=10;
+    int b=20;
+    int c=30;
+    printf("before swapping: a=%d,b=%d,c=%d\n",a,b,c);
+    int temp=a;
+    a=b;
+    b=c;
+    c=temp;
+    printf("after the swapping: a=%d,b=%d,c=%d\n",a,b,c);
+    return 0;
+    
+}
